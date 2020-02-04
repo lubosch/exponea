@@ -8,15 +8,15 @@ Gem::Specification.new do |spec|
 
   spec.summary = %q{Gem to integrate exponea into your app}
   spec.description = %q{Gem to integrate exponea into your app. Provides api for adding events and users, also bulk actions}
-  spec.homepage = "https://bitbucket.org/wilio-team/wilio-backend"
+  spec.homepage = "https://bitbucket.org/omwtfg/exponea-rails"
   spec.license = "MIT"
   spec.required_ruby_version = Gem::Requirement.new(">= 2.3.0")
 
-  spec.metadata["allowed_push_host"] = "https://bitbucket.org/wilio-team/wilio-backend"
+  spec.metadata["allowed_push_host"] = "https://bitbucket.org/omwtfg/exponea-rails"
 
   spec.metadata["homepage_uri"] = spec.homepage
-  spec.metadata["source_code_uri"] = "https://bitbucket.org/wilio-team/wilio-backend"
-  spec.metadata["changelog_uri"] = "https://bitbucket.org/wilio-team/wilio-backend/src/master/gems/exponea/changelog.md"
+  spec.metadata["source_code_uri"] = "https://bitbucket.org/omwtfg/exponea-rails"
+  spec.metadata["changelog_uri"] = "https://bitbucket.org/omwtfg/exponea-rails/src/masterchangelog.md"
 
   # Specify which files should be added to the gem when it is released.
   # The `git ls-files -z` loads the files in the RubyGem that have been added into git.
