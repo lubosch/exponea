@@ -2,9 +2,7 @@ module Exponea
   class Customers < BaseApi
     def self.update_properties(customer_id, properties, batch = false)
       payload = { customer_ids: { registered: customer_id }, properties: properties }
-      if batch
-        return { name: 'customers', data: payload }
-      end
+      return { name: 'customers', data: payload } if batch
 
       path = "/track/v2/projects/#{Exponea.config.project}/customers"
       post(path, payload)

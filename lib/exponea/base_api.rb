@@ -1,6 +1,6 @@
 module Exponea
   class BaseApi
-    EXPONEA_URL = 'https://api.exponea.com'
+    EXPONEA_URL = 'https://api.exponea.com'.freeze
 
     def self.request(uri, method = 'POST', payload = nil)
       client = Faraday.new(url: EXPONEA_URL) do |faraday|
@@ -11,7 +11,7 @@ module Exponea
       end
 
       response = client.send(method.downcase.to_sym) do |request|
-        request.headers["authorization"] = "Basic #{Exponea.config.token}"
+        request.headers['authorization'] = "Basic #{Exponea.config.token}"
         request.url(uri)
         request.body = payload
       end
