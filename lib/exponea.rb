@@ -18,5 +18,6 @@ module Exponea
     yield(@configuration)
   end
 
-  class Error < StandardError; end
+  class Error < StandardError
+  end
 end
