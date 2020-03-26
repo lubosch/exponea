@@ -1,7 +1,8 @@
 module Exponea
   class Events < BaseApi
     def self.add_event(customer_id, event_type, properties = nil, batch = false, timestamp = nil)
-      payload = { customer_ids: { registered: customer_id },
+      customer_ids = customer_id.is_a?(Hash) ? customer_id : { registered: customer_id }
+      payload = { customer_ids: customer_ids,
                   properties: properties,
                   event_type: event_type }
       payload = payload.merge(timestamp: timestamp.to_i) if timestamp
