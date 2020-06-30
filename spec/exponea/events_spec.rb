@@ -26,12 +26,14 @@ RSpec.describe Exponea::Events do
     context 'when using multiple ids' do
       subject { described_class.add_event({ registered: '3423423', device_id: 'unique_id' }, 'demand_open', { first_name: 'John' }) }
       it 'sends request to exponea' do
-        stub_request(:post, "https://api.exponea.com/track/v2/projects/#{Exponea.config.project}/customers/events").
-          with(
-            body: { "customer_ids": { registered: '3423423', device_id: 'unique_id' }, "properties": { "first_name": "John" }, "event_type": "demand_open" },
+        stub_request(:post, "https://api.exponea.com/track/v2/projects/#{Exponea.config.project}/customers/events")
+          .with(
+            body: {
+              "customer_ids": { registered: '3423423', device_id: 'unique_id' }, "properties": { "first_name": 'John' }, "event_type": 'demand_open'
+            },
             headers: {
               'Authorization' => "Basic #{Exponea.config.token}",
-              'Content-Type' => 'application/json',
+              'Content-Type' => 'application/json'
             }
           ).and_return(body: '{ "errors": [], "success": true }')
         expect(subject['success']).to be_truthy
