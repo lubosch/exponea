@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.description = 'Gem to integrate exponea into your app. Provides api for adding events and users, also bulk actions'
   spec.homepage = 'https://bitbucket.org/wilio-team/exponea-rails'
   spec.license = 'MIT'
-  spec.required_ruby_version = Gem::Requirement.new('>= 2.3.0')
+  spec.required_ruby_version = Gem::Requirement.new('>= 2.4.0')
 
   spec.metadata['allowed_push_host'] = 'https://bitbucket.org/wilio-team/exponea-rails'
 
