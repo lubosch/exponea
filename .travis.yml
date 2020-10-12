@@ -1,6 +1,21 @@
----
+sudo: false
+dist: trusty
+
 language: ruby
+
 cache: bundler
+
+notifications:
+  email: false
+
 rvm:
   - 2.6.5
-before_install: gem install bundler -v 2.1.4
+
+before_install:
+  - gem install bundler
+
+script:
+  - bundle exec rspec --format progress
+
+after_success:
+  - codecov
