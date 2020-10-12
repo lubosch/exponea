@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.com/lubosch/exponea.svg?branch=master)](https://travis-ci.com/lubosch/exponea)
+[![Coverage Status](https://codecov.io/gh/lubosch/exponea/branch/master/graph/badge.svg)](https://codecov.io/gh/lubosch/exponea)
+
 # Exponea
 
 Gem for creating or updating customers in Exponea and triggering events in single or batch mode.
