@@ -16,6 +16,3 @@ before_install:
 
 script:
   - bundle exec rspec --format progress
-
-after_success:
-  - codecov

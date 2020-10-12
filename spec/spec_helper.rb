@@ -1,3 +1,5 @@
+require_relative 'support/simplecov'
+
 require 'bundler/setup'
 require 'exponea'
 require 'webmock/rspec'
