@@ -14,3 +14,6 @@ add support for multiple ids in add_event
 
 ## 1.6
 Static analysis + readme
+
+## 1.7
+Bump faraday version

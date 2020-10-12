@@ -12,7 +12,7 @@ Style/FrozenStringLiteralComment:
 Metrics/BlockLength:
   Exclude:
     - 'spec/**/*'
-
+    - 'exponea.gemspec'
 
 Layout/MultilineOperationIndentation:
   EnforcedStyle: indented
