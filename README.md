@@ -1,8 +1,6 @@
 # Exponea
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/exponea`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Gem for creating or updating customers in Exponea and triggering events in single or batch mode.
 
 ## Installation
 
@@ -20,9 +18,46 @@ Or install it yourself as:
 
     $ gem install exponea
 
+## Configuration
+
+```
+Exponea.configure do |config|
+  config.project = Rails.application.config_for(:exponea)[:project]
+  config.token = Rails.application.config_for(:exponea)[:token]
+  config.api_secret = Rails.application.config_for(:exponea)[:api_secret]
+end
+```
+
+Initialize `exponea.rb` with this settings:
+- **project**: project id from exponea
+- **token**: token generated from exponea
+- **api_secret**(optional): secret API you can use in controllers to authorize requests from exponea to your app
+
 ## Usage
 
-TODO: Write usage instructions here
+### Create or update customer
+```
+Exponea::Customers.update_properties(customer_id, properties, batch = false)
+```
+- **customer_id**: use either `registered` id or hash with one of your id
+- **properties**: hash of properties to be updated
+- **batch**: returns hash that can be sent as batch
+
+### Add event
+```
+Exponea::Events.add_event(customer_id, event_type, properties = nil, batch = false, timestamp = nil)`
+```
+- **customer_id**: use either `registered` id or hash with one of your id
+- **event_type**: event name defined in exponea
+- **batch**: returns hash that can be sent as batch
+- **timestamp**: modified timestamp of event if needed
+
+### Batch events
+```
+Exponea::BaseApi.batch_commands(commands)
+```
+
+- **commands**: list of commands created with `batch = true`. They are sent in batches of 50 (exponea limitation)
 
 ## Development
 
@@ -32,7 +67,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/exponea.
+Bug reports and pull requests are welcome on GitHub at https://github.com/lubosch/exponea.
 
 
 ## License
