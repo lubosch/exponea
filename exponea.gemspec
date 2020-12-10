@@ -12,9 +12,10 @@ Gem::Specification.new do |spec|
   spec.license = 'MIT'
   spec.required_ruby_version = Gem::Requirement.new('>= 2.4.0')
 
+  spec.extra_rdoc_files = %w[README.md changelog.md]
   spec.metadata['homepage_uri'] = spec.homepage
-  spec.metadata['source_code_uri'] = 'https://github.com/lubosch/exponea.git'
-  spec.metadata['changelog_uri'] = 'https://raw.githubusercontent.com/lubosch/exponea/master/changelog.md'
+  spec.metadata['source_code_uri'] = 'https://github.com/lubosch/exponea'
+  spec.metadata['changelog_uri'] = 'https://github.com/lubosch/exponea/blob/master/changelog.md'
 
   # Specify which files should be added to the gem when it is released.
   # The `git ls-files -z` loads the files in the RubyGem that have been added into git.
