@@ -24,13 +24,11 @@ module Exponea
         path = "track/v2/projects/#{Exponea.config.project}/batch"
         payload = { commands: command_batch }
         response = post(path, payload)
-        response['results'].each do |result|
-          if response['time']
-            responses.push(result['time'])
-          else
-            responses.push(result['success'])
-          end
-        end
+        response = post(path, payload) unless response['success'] # retry if exponea failed for some reason
+
+        next unless response['success']
+
+        response['results'].each { |result| responses.push(response['time'] ? result['time'] : result['success']) }
       end
       responses
     end

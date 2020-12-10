@@ -26,7 +26,7 @@ RSpec.describe Exponea::BaseApi do
             'Authorization' => 'Basic k324m3k',
             'Content-Type' => 'application/json'
           }
-        ).and_return(body: '{"results": [{ "errors": [], "success": true }, { "errors": [], "success": true }]}')
+        ).and_return(body: '{"results": [{ "errors": [], "success": true }, { "errors": [], "success": true }], "success": true}')
       expect(subject).to all(be_truthy)
     end
   end

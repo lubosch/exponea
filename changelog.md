@@ -17,3 +17,6 @@ Static analysis + readme
 
 ## 1.7
 Bump faraday version
+
+## 1.8
+Better batch error handling
