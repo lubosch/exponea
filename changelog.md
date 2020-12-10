@@ -20,3 +20,6 @@ Bump faraday version
 
 ## 1.8
 Better batch error handling
+
+## 1.9
+Metadata update
