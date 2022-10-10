@@ -1,5 +1,4 @@
 require 'faraday'
-require 'faraday_middleware'
 
 require 'exponea/base_api'
 require 'exponea/configuration'

@@ -1,6 +1,7 @@
 require 'spec_helper'
 
 RSpec.describe Exponea::Customers do
+  let(:headers) { { 'Content-Type' => 'application/json' } }
   describe '.update_properties' do
     subject { described_class.update_properties('3423423', first_name: 'John') }
     it 'sends request to exponea' do
@@ -11,7 +12,7 @@ RSpec.describe Exponea::Customers do
             'Authorization' => "Basic #{Exponea.config.token}",
             'Content-Type' => 'application/json'
           }
-        ).and_return(body: '{ "errors": [], "success": true }')
+        ).and_return(body: '{ "errors": [], "success": true }', headers:)
       expect(subject['success']).to be_truthy
     end
   end
@@ -33,7 +34,7 @@ RSpec.describe Exponea::Customers do
             'Authorization' => "Basic #{Exponea.config.token}",
             'Content-Type' => 'application/json'
           }
-        ).and_return(body: '{ "errors": [], "success": true }')
+        ).and_return(body: '{ "errors": [], "success": true }', headers:)
       expect(subject['success']).to be_truthy
     end
   end

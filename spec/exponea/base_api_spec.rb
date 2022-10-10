@@ -1,6 +1,7 @@
 require 'spec_helper'
 
 RSpec.describe Exponea::BaseApi do
+  let(:headers) { { 'Content-Type' => 'application/json' } }
   describe '.request' do
     subject { described_class.request('/url', 'PUT', data: []) }
     it 'sends request to exponea' do
@@ -11,7 +12,7 @@ RSpec.describe Exponea::BaseApi do
             'Authorization' => 'Basic k324m3k',
             'Content-Type' => 'application/json'
           }
-        ).and_return(body: '{ "errors": [], "success": true }')
+        ).and_return(body: '{ "errors": [], "success": true }', headers:)
       expect(subject['success']).to be_truthy
     end
   end
@@ -26,7 +27,7 @@ RSpec.describe Exponea::BaseApi do
             'Authorization' => 'Basic k324m3k',
             'Content-Type' => 'application/json'
           }
-        ).and_return(body: '{"results": [{ "errors": [], "success": true }, { "errors": [], "success": true }], "success": true}')
+        ).and_return(body: '{"results": [{ "errors": [], "success": true }, { "errors": [], "success": true }], "success": true}', headers:)
       expect(subject).to all(be_truthy)
     end
   end

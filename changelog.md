@@ -1,25 +1,22 @@
 # Changelog
 
 ## 1.0
-Basic api created
+Breaking: Faraday update
 
-## 1.1
-???
+## 0.1.9
+Metadata update
 
-## 1.2
-???
-
-## 1.3
-add support for multiple ids in add_event
-
-## 1.6
-Static analysis + readme
-
-## 1.7
-Bump faraday version
-
-## 1.8
+## 0.1.8
 Better batch error handling
 
-## 1.9
-Metadata update
+## 0.1.7
+Bump faraday version
+
+## 0.1.6
+Static analysis + readme
+
+## 0.1.3
+add support for multiple ids in add_event
+
+## 0.1
+Basic api created

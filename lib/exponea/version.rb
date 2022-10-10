@@ -1,3 +1,3 @@
 module Exponea
-  VERSION = '0.1.9'.freeze
+  VERSION = '1'.freeze
 end

@@ -1,6 +1,7 @@
 require 'spec_helper'
 
 RSpec.describe Exponea::Events do
+  let(:headers) { { 'Content-Type' => 'application/json' } }
   describe '.add_event' do
     subject { described_class.add_event('3423423', 'demand_open', first_name: 'John') }
     it 'sends request to exponea' do
@@ -11,7 +12,7 @@ RSpec.describe Exponea::Events do
             'Authorization' => "Basic #{Exponea.config.token}",
             'Content-Type' => 'application/json'
           }
-        ).and_return(body: '{ "errors": [], "success": true }')
+        ).and_return(body: '{ "errors": [], "success": true }', headers:)
       expect(subject['success']).to be_truthy
     end
 
@@ -35,7 +36,7 @@ RSpec.describe Exponea::Events do
               'Authorization' => "Basic #{Exponea.config.token}",
               'Content-Type' => 'application/json'
             }
-          ).and_return(body: '{ "errors": [], "success": true }')
+          ).and_return(body: '{ "errors": [], "success": true }', headers:)
         expect(subject['success']).to be_truthy
       end
     end
